@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<!-- saved from url=(0034)https://wheretheiss.at/w/developer -->
+<html lang="en" id="wheretheissat"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Where the ISS at?</title>
+    <meta name="description" content="A site for tracking the location of and getting fly-over notifications for the International Space Station">
+    <meta name="keywords" content="ISS, International Space Station, current location, twitter, push notifications, real-time, astronomy, satellite, nasa, orbit">
+    <meta name="author" content="Bill Shupp">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link rel="stylesheet" href="./Where the ISS at__files/bootstrap.min.css-before-responsive.css-bootstrap-responsive.min.css-main.css">
+    <script type="application/javascript" async="" defer="" src="./Where the ISS at__files/track.js"></script><script type="text/javascript" async="" src="./Where the ISS at__files/ga.js"></script><script type="text/javascript" async="" src="./Where the ISS at__files/63GNMxab5vZ1JPwttfc6g.js"></script><script type="text/javascript" async="" src="./Where the ISS at__files/mixpanel-2.2.min.js"></script><script type="text/javascript" src="./Where the ISS at__files/js"></script>
+    <script type="text/javascript" src="./Where the ISS at__files/jquery.min.js"></script>
+    <script type="text/javascript" src="./Where the ISS at__files/jquery.livequery.min.js-main.min.js-bootstrap-tooltip.min.js-bootstrap-popover.min.js-bootstrap-alert.min.js-bootstrap-collapse.min.js"></script>
+
+    <!-- Le fav and touch icons -->
+    <!-- Don't have these yet
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+    <!-- start Mixpanel -->
+    <script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f);b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==
+    typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,
+    e,d])};b.__SV=1.2}})(document,window.mixpanel||[]);
+    mixpanel.init("a1f75f87329d16cae0a1d30747bdf67e");
+    </script>
+    <!-- end Mixpanel -->
+  <style type="text/css" media="screen">.uv-icon{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;display:inline-block;cursor:pointer;position:relative;-moz-transition:all 300ms;-o-transition:all 300ms;-webkit-transition:all 300ms;transition:all 300ms;width:39px;height:39px;position:fixed;z-index:100002;opacity:0.8;-moz-transition:opacity 100ms;-o-transition:opacity 100ms;-webkit-transition:opacity 100ms;transition:opacity 100ms}.uv-icon.uv-bottom-right{bottom:10px;right:12px}.uv-icon.uv-top-right{top:10px;right:12px}.uv-icon.uv-bottom-left{bottom:10px;left:12px}.uv-icon.uv-top-left{top:10px;left:12px}.uv-icon.uv-is-selected{opacity:1}.uv-icon svg{width:39px;height:39px}.uv-icon-trigger{display:block;width:39px;height:39px}.uv-popover{font-family:sans-serif;font-weight:100;font-size:13px;color:black;position:fixed;z-index:100001}.uv-popover-content{-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;background:white;position:relative;width:325px;height:325px;-moz-transition:background 200ms;-o-transition:background 200ms;-webkit-transition:background 200ms;transition:background 200ms}.uv-bottom .uv-popover-content{-moz-box-shadow:rgba(0,0,0,0.3) 0 -10px 60px,rgba(0,0,0,0.1) 0 0 20px;-webkit-box-shadow:rgba(0,0,0,0.3) 0 -10px 60px,rgba(0,0,0,0.1) 0 0 20px;box-shadow:rgba(0,0,0,0.3) 0 -10px 60px,rgba(0,0,0,0.1) 0 0 20px}.uv-top .uv-popover-content{-moz-box-shadow:rgba(0,0,0,0.3) 0 10px 60px,rgba(0,0,0,0.1) 0 0 20px;-webkit-box-shadow:rgba(0,0,0,0.3) 0 10px 60px,rgba(0,0,0,0.1) 0 0 20px;box-shadow:rgba(0,0,0,0.3) 0 10px 60px,rgba(0,0,0,0.1) 0 0 20px}.uv-left .uv-popover-content{-moz-box-shadow:rgba(0,0,0,0.3) 10px 0 60px,rgba(0,0,0,0.1) 0 0 20px;-webkit-box-shadow:rgba(0,0,0,0.3) 10px 0 60px,rgba(0,0,0,0.1) 0 0 20px;box-shadow:rgba(0,0,0,0.3) 10px 0 60px,rgba(0,0,0,0.1) 0 0 20px}.uv-right .uv-popover-content{-moz-box-shadow:rgba(0,0,0,0.3) -10px 0 60px,rgba(0,0,0,0.1) 0 0 20px;-webkit-box-shadow:rgba(0,0,0,0.3) -10px 0 60px,rgba(0,0,0,0.1) 0 0 20px;box-shadow:rgba(0,0,0,0.3) -10px 0 60px,rgba(0,0,0,0.1) 0 0 20px}.uv-ie8 .uv-popover-content{position:relative}.uv-ie8 .uv-popover-content .uv-popover-content-shadow{display:block;background:black;content:'';position:absolute;left:-15px;top:-15px;width:100%;height:100%;filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius=15,MakeShadow=true,ShadowOpacity=0.30);z-index:-1}.uv-popover-tail{border:9px solid transparent;width:0;z-index:10;position:absolute;-moz-transition:border-top-color 200ms;-o-transition:border-top-color 200ms;-webkit-transition:border-top-color 200ms;transition:border-top-color 200ms}.uv-top .uv-popover-tail{bottom:-20px;border-top:11px solid white}.uv-bottom .uv-popover-tail{top:-20px;border-bottom:11px solid white}.uv-left .uv-popover-tail{right:-20px;border-left:11px solid white}.uv-right .uv-popover-tail{left:-20px;border-right:11px solid white}.uv-popover-loading{background:white;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;position:absolute;width:100%;height:100%;left:0;top:0}.uv-popover-loading-text{position:absolute;top:50%;margin-top:-0.5em;width:100%;text-align:center}.uv-popover-iframe-container{height:100%}.uv-popover-iframe{-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;overflow:hidden}.uv-is-hidden{display:none}.uv-is-invisible{display:block !important;visibility:hidden !important}.uv-is-transitioning{display:block !important}.uv-no-transition{-moz-transition:none !important;-webkit-transition:none !important;-o-transition:color 0 ease-in !important;transition:none !important}.uv-fade{opacity:1;-moz-transition:opacity 200ms ease-out;-o-transition:opacity 200ms ease-out;-webkit-transition:opacity 200ms ease-out;transition:opacity 200ms ease-out}.uv-fade.uv-is-hidden{opacity:0}.uv-scale-top,.uv-scale-top-left,.uv-scale-top-right,.uv-scale-bottom,.uv-scale-bottom-left,.uv-scale-bottom-right,.uv-scale-right,.uv-scale-right-top,.uv-scale-right-bottom,.uv-scale-left,.uv-scale-left-top,.uv-scale-left-bottom,.uv-slide-top,.uv-slide-bottom,.uv-slide-left,.uv-slide-right{opacity:1;-moz-transition:all 80ms ease-out;-o-transition:all 80ms ease-out;-webkit-transition:all 80ms ease-out;transition:all 80ms ease-out}.uv-scale-top.uv-is-hidden{opacity:0;-moz-transform:scale(0.8) translateY(-15%);-ms-transform:scale(0.8) translateY(-15%);-webkit-transform:scale(0.8) translateY(-15%);transform:scale(0.8) translateY(-15%)}.uv-scale-top-left.uv-is-hidden{opacity:0;-moz-transform:scale(0.8) translateY(-15%) translateX(-10%);-ms-transform:scale(0.8) translateY(-15%) translateX(-10%);-webkit-transform:scale(0.8) translateY(-15%) translateX(-10%);transform:scale(0.8) translateY(-15%) translateX(-10%)}.uv-scale-top-right.uv-is-hidden{opacity:0;-moz-transform:scale(0.8) translateY(-15%) translateX(10%);-ms-transform:scale(0.8) translateY(-15%) translateX(10%);-webkit-transform:scale(0.8) translateY(-15%) translateX(10%);transform:scale(0.8) translateY(-15%) translateX(10%)}.uv-scale-bottom.uv-is-hidden{opacity:0;-moz-transform:scale(0.8) translateY(15%);-ms-transform:scale(0.8) translateY(15%);-webkit-transform:scale(0.8) translateY(15%);transform:scale(0.8) translateY(15%)}.uv-scale-bottom-left.uv-is-hidden{opacity:0;-moz-transform:scale(0.8) translateY(15%) translateX(-10%);-ms-transform:scale(0.8) translateY(15%) translateX(-10%);-webkit-transform:scale(0.8) translateY(15%) translateX(-10%);transform:scale(0.8) translateY(15%) translateX(-10%)}.uv-scale-bottom-right.uv-is-hidden{opacity:0;-moz-transform:scale(0.8) translateY(15%) translateX(10%);-ms-transform:scale(0.8) translateY(15%) translateX(10%);-webkit-transform:scale(0.8) translateY(15%) translateX(10%);transform:scale(0.8) translateY(15%) translateX(10%)}.uv-scale-right.uv-is-hidden{opacity:0;-moz-transform:scale(0.8) translateX(15%);-ms-transform:scale(0.8) translateX(15%);-webkit-transform:scale(0.8) translateX(15%);transform:scale(0.8) translateX(15%)}.uv-scale-right-top.uv-is-hidden{opacity:0;-moz-transform:scale(0.8) translateX(15%) translateY(-10%);-ms-transform:scale(0.8) translateX(15%) translateY(-10%);-webkit-transform:scale(0.8) translateX(15%) translateY(-10%);transform:scale(0.8) translateX(15%) translateY(-10%)}.uv-scale-right-bottom.uv-is-hidden{opacity:0;-moz-transform:scale(0.8) translateX(15%) translateY(10%);-ms-transform:scale(0.8) translateX(15%) translateY(10%);-webkit-transform:scale(0.8) translateX(15%) translateY(10%);transform:scale(0.8) translateX(15%) translateY(10%)}.uv-scale-left.uv-is-hidden{opacity:0;-moz-transform:scale(0.8) translateX(-15%);-ms-transform:scale(0.8) translateX(-15%);-webkit-transform:scale(0.8) translateX(-15%);transform:scale(0.8) translateX(-15%)}.uv-scale-left-top.uv-is-hidden{opacity:0;-moz-transform:scale(0.8) translateX(-15%) translateY(-10%);-ms-transform:scale(0.8) translateX(-15%) translateY(-10%);-webkit-transform:scale(0.8) translateX(-15%) translateY(-10%);transform:scale(0.8) translateX(-15%) translateY(-10%)}.uv-scale-left-bottom.uv-is-hidden{opacity:0;-moz-transform:scale(0.8) translateX(-15%) translateY(10%);-ms-transform:scale(0.8) translateX(-15%) translateY(10%);-webkit-transform:scale(0.8) translateX(-15%) translateY(10%);transform:scale(0.8) translateX(-15%) translateY(10%)}.uv-slide-top.uv-is-hidden{-moz-transform:translateY(-100%);-ms-transform:translateY(-100%);-webkit-transform:translateY(-100%);transform:translateY(-100%)}.uv-slide-bottom.uv-is-hidden{-moz-transform:translateY(100%);-ms-transform:translateY(100%);-webkit-transform:translateY(100%);transform:translateY(100%)}.uv-slide-left.uv-is-hidden{-moz-transform:translateX(-100%);-ms-transform:translateX(-100%);-webkit-transform:translateX(-100%);transform:translateX(-100%)}.uv-slide-right.uv-is-hidden{-moz-transform:translateX(100%);-ms-transform:translateX(100%);-webkit-transform:translateX(100%);transform:translateX(100%)}
+</style><style type="text/css" media="print">#uvTab,.uv-tray,.uv-icon,.uv-popover,.uv-bubble{display:none!important}</style><script type="text/javascript" charset="UTF-8" src="./Where the ISS at__files/common.js"></script><script type="text/javascript" charset="UTF-8" src="./Where the ISS at__files/util.js"></script><script type="text/javascript" charset="UTF-8" src="./Where the ISS at__files/stats.js"></script></head>
+    <body><div id="uvTab" style="background: url(&quot;https://widget.uservoice.com/pkg/clients/widget2/tab-right-dark-no-bullhorn-f1a7a8ba764338840a5ea37dd05a3c4f.png&quot;) 50% 0px no-repeat rgb(0, 100, 205); border-top: 1px solid rgb(255, 255, 255); border-bottom: 1px solid rgb(255, 255, 255); border-left: 1px solid rgb(255, 255, 255); border-image: initial; border-right: none; border-radius: 4px 0px 0px 4px; box-shadow: rgba(255, 255, 255, 0.247059) 1px 1px 1px inset, rgba(0, 0, 0, 0.498039) 0px 1px 2px; font-style: normal; font-variant: normal; font-weight: bold; font-stretch: normal; font-size: 14px; line-height: 1em; font-family: Arial, sans-serif; position: fixed; right: 0px; top: 50%; z-index: 9999; margin-top: -46px;" class="uv-tab uv-slide-right " aria-label="Open Feedback Widget"><a id="uvTabLabel" style="background-color: transparent; display:block;padding:10px 5px 10px 5px;text-decoration:none;" href="javascript:void(0);"><img src="./Where the ISS at__files/feedback-tab.png" alt="feedback" style="border:0; background-color: transparent; padding:0; margin:0;"></a></div>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+          <div class="navbar-inner">
+            <div class="container-fluid">
+
+              <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </a>
+
+              <a class="brand" href="https://wheretheiss.at/">
+                 <span class="superscript">beta</span>
+                 <img width="210" height="18" src="./Where the ISS at__files/logo.png" alt="Where the ISS at?">
+              </a>
+
+              <div class="nav-collapse">
+                <ul class="nav">
+                    <li><a href="https://wheretheiss.at/">Home</a></li>
+                                    </ul>
+                <span class="pull-right"><a href="https://wheretheiss.at/w/login/prepare?ezrpd=twitter"><img class="menu-sign-in-with-twitter" src="./Where the ISS at__files/sign-in-with-twitter-l.png"></a></span>
+                              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="content">
+                <div id="flash-message"></div>
+                <div class="page-header">
+    <ul class="breadcrumb">
+      <li><a href="https://wheretheiss.at/">Home</a> <span class="divider">/</span></li>
+      <li class="active">Developer</li>
+    </ul>
+
+    <h2>"Where the ISS at?" REST API Documentation</h2>
+</div>
+<div class="row">
+    <div class="span12">
+        <h2>Overview</h2>
+        <p>Welcome to the WTIA REST API!  Using this service, you can get current, past, or future position of the ISS, get timezone information about a set of coordinates, and also get TLE data on the ISS.</p>
+        <h2>Authentication</h2>
+        <p>Currently there is no authentication required for accessing the WTIA REST API, but some endpoints likely will allow for authentication in the future.  In the meantime, please note the rate limits below.</p>
+        <h2>Rate Limiting</h2>
+        <p>Currently requests are limited to roughly 1 per second.  You can keep track of your usage by looking at the <em>X-Rate-Limit</em> headers returned in each response.</p>
+        <h2>Responses</h2>
+        <p>Some notes on responses from this API:</p>
+        <ul>
+            <li>All responses default to JSON format, and only some endpoints will support other formats.</li>
+            <li>If you want to easily visualize a json response in a browser, you can use the parameter <em>indent=4</em> to indent responses with 4 spaces.</li>
+            <li>All successful requests will have a 2XX response code.  Error responses will have the appropriate HTTP code (something other than 2XX), along with <em>error</em> and <em>status</em> properties in the object.</li>
+            <li>If you need to suppress non-2XX response codes, you can include the optional parameter <em>suppress_response_codes=true</em>.  This will tell the API to always return a 200 response, and you can inspect the response for an <em>error</em> property.
+        </li></ul>
+        <h2>Support</h2>
+        <p>Please feel free to use the "feedback" button on this site to communicate any questions, concerns, or requests you may have about using this API, and we'll try to respond promptly.</p>
+        <h2>Endpoints</h2>
+
+
+        <hr>
+        <h2>satellites</h2>
+        <div class="row">
+            <div class="span9">
+                <p>This endpoint returns a list of satellites that this API has information about, inluding a common name and NORAD catalog id.  Currently, there is only one, the International Space Station.  But in the future, we plan to provide more.</p>
+                <strong>Example Resource URL</strong>
+                <p class="muted">https://api.wheretheiss.at/v1/satellites</p>
+                <strong>Example Response</strong>
+                <pre>[
+    {
+    "name": "iss",
+    "id": 25544
+    }
+]</pre>
+
+                <strong>Parameters</strong>
+                <p>None</p>
+            </div>
+            <div class="span3">
+                <p><strong>Resource Information</strong></p>
+                <table class="table table-border table-striped">
+                    <tbody><tr>
+                        <td>API Version</td>
+                        <td><span class="label label-info">1</span></td>
+                    </tr><tr>
+                    </tr><tr>
+                        <td>Response Format</td><td><strong>json</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Rate Limited?</td><td><strong>Yes</strong></td>
+                    </tr>
+                    
+                </tbody></table>
+            </div>
+        </div>
+
+        <hr>
+        <h2>satellites/[id]</h2>
+        <div class="row">
+            <div class="span9">
+                <p>Returns position, velocity, and other related information about a satellite for a given point in time. [id] is required and should be the NORAD catalog id.  For the ISS, that id is 25544.</p>
+                <strong>Example Resource URL</strong>
+                <p class="muted">https://api.wheretheiss.at/v1/satellites/25544</p>
+                <strong>Example Response</strong>
+                <pre>{
+    "name": "iss",
+    "id": 25544,
+    "latitude": 50.11496269845,
+    "longitude": 118.07900427317,
+    "altitude": 408.05526028199,
+    "velocity": 27635.971970874,
+    "visibility": "daylight",
+    "footprint": 4446.1877699772,
+    "timestamp": 1364069476,
+    "daynum": 2456375.3411574,
+    "solar_lat": 1.3327003598631,
+    "solar_lon": 238.78610691196,
+    "units": "kilometers"
+}</pre>
+
+                <strong>Parameters</strong>
+                <table class="table table-border table-striped">
+                    <tbody><tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Required</th>
+                        <th>Default</th>
+                    </tr>
+
+                    <tr>
+                        <td>units</td>
+                        <td>Whether to use miles or kilometers</td>
+                        <td>no</td>
+                        <td>kilometers</td>
+                    </tr><tr>
+                    </tr><tr>
+                        <td>timestamp</td>
+                        <td>Optionally specify a timestamp for orbital position</td>
+                        <td>no</td>
+                        <td>current timestamp</td>
+                    </tr><tr>
+                </tr></tbody></table>
+            </div>
+            <div class="span3">
+                <p><strong>Resource Information</strong></p>
+                <table class="table table-border table-striped">
+                    <tbody><tr>
+                        <td>API Version</td>
+                        <td><span class="label label-info">1</span></td>
+                    </tr><tr>
+                        <td>Response Format</td><td><strong>json</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Rate Limited?</td><td><strong>Yes</strong></td>
+                    </tr>
+                    
+                </tbody></table>
+            </div>
+        </div>
+
+
+
+        <hr>
+        <h2>satellites/[id]/positions</h2>
+        <div class="row">
+            <div class="span9">
+                <p>Returns a list in which each entry contains position, velocity, and other related information about a satellite for a comma delimited list of timestamps (up to 10). [id] is required and should be the NORAD catalog id.  For the ISS, that id is 25544.</p>
+                <strong>Example Resource URL</strong>
+                <p class="muted">https://api.wheretheiss.at/v1/satellites/25544/positions?timestamps=1436029892,1436029902&amp;units=miles</p>
+                <strong>Example Response</strong>
+                <pre>[
+    {
+        "name": "iss",
+        "id": 25544,
+        "latitude": -24.872011788413,
+        "longitude": 17.600256937812,
+        "altitude": 253.3204968444,
+        "velocity": 17148.926453151,
+        "visibility": "daylight",
+        "footprint": 2761.5254566356,
+        "timestamp": 1436029892,
+        "daynum": 2457208.2163426,
+        "solar_lat": 22.85465108118,
+        "solar_lon": 283.22043315343,
+        "units": "miles"
+    },
+    {
+        "name": "iss",
+        "id": 25544,
+        "latitude": -25.346134802867,
+        "longitude": 18.047422455202,
+        "altitude": 253.44244641825,
+        "velocity": 17148.616662804,
+        "visibility": "daylight",
+        "footprint": 2762.1565371697,
+        "timestamp": 1436029902,
+        "daynum": 2457208.2164583,
+        "solar_lat": 22.854640837166,
+        "solar_lon": 283.17877169756,
+        "units": "miles"
+    }
+]
+</pre>
+
+                <strong>Parameters</strong>
+                <table class="table table-border table-striped">
+                    <tbody><tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Required</th>
+                        <th>Default</th>
+                    </tr>
+
+                    <tr>
+                        <td>timestamps</td>
+                        <td>Specify a comma delimited list of timestamps for orbital positions, limit 10 per request</td>
+                        <td>yes</td>
+                        <td>none</td>
+                    </tr><tr>
+                    </tr><tr>
+                        <td>units</td>
+                        <td>Whether to use miles or kilometers</td>
+                        <td>no</td>
+                        <td>kilometers</td>
+                    </tr><tr>
+                </tr></tbody></table>
+            </div>
+            <div class="span3">
+                <p><strong>Resource Information</strong></p>
+                <table class="table table-border table-striped">
+                    <tbody><tr>
+                        <td>API Version</td>
+                        <td><span class="label label-info">1</span></td>
+                    </tr><tr>
+                        <td>Response Format</td><td><strong>json</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Rate Limited?</td><td><strong>Yes</strong></td>
+                    </tr>
+                    
+                </tbody></table>
+            </div>
+        </div>
+
+
+        <hr>
+        <h2>satellites/[id]/tles</h2>
+        <div class="row">
+            <div class="span9">
+                <p>Returns the TLE data for a given satellite in either json or text format</p>
+                <strong>Example Resource URL (json)</strong>
+                <p class="muted">https://api.wheretheiss.at/v1/satellites/25544/tles</p>
+                <strong>Example Response</strong>
+                <pre>{
+    "requested_timestamp": 1364084064,
+    "tle_timestamp": 1363892433,
+    "id": "25544",
+    "name": "iss",
+    "header": "ISS (ZARYA)",
+    "line1": "1 25544U 98067A   13080.79204657  .00024647  00000-0  40606-3 0  4540",
+    "line2": "2 25544  51.6478 182.2316 0011718  59.7125  80.2831 15.52100765821132"
+}</pre>
+                <strong>Example Resource URL (text)</strong>
+                <p class="muted">https://api.wheretheiss.at/v1/satellites/25544/tles?format=text</p>
+
+                <strong>Example Response</strong>
+                <pre>ISS (ZARYA)
+1 25544U 98067A   13080.79204657  .00024647  00000-0  40606-3 0  4540
+2 25544  51.6478 182.2316 0011718  59.7125  80.2831 15.52100765821132</pre>
+
+                <strong>Parameters</strong>
+                <table class="table table-border table-striped">
+                    <tbody><tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Required</th>
+                        <th>Default</th>
+                    </tr>
+
+                    <tr>
+                        <td>format</td>
+                        <td>response format, can be json or text</td>
+                        <td>no</td>
+                        <td>json</td>
+                    </tr><tr>
+                </tr></tbody></table>
+            </div>
+            <div class="span3">
+                <p><strong>Resource Information</strong></p>
+                <table class="table table-border table-striped">
+                    <tbody><tr>
+                        <td>API Version</td>
+                        <td><span class="label label-info">1</span></td>
+                    </tr><tr>
+                        <td>Response Format</td><td><strong>json or text</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Rate Limited?</td><td><strong>Yes</strong></td>
+                    </tr>
+                    
+                </tbody></table>
+            </div>
+        </div>
+
+        <hr>
+        <h2>coordinates/[lat,lon]</h2>
+        <div class="row">
+            <div class="span9">
+                <p>Returns position, current time offset, country code, and timezone id for a given set of coordinates in the format of longitude,latitude</p>
+                <strong>Example Resource URL</strong>
+                <p class="muted">https://api.wheretheiss.at/v1/coordinates/37.795517,-122.393693</p>
+                <strong>Example Response</strong>
+                <pre>{
+    "latitude": "37.795517",
+    "longitude": "-122.393693",
+    "timezone_id": "America/Los_Angeles",
+    "offset": -7,
+    "country_code": "US",
+    "map_url": "https://maps.google.com/maps?q=37.795517,-122.393693&amp;z=4"
+}</pre>
+
+                <strong>Parameters</strong>
+                <p>None</p>
+            </div>
+            <div class="span3">
+                <p><strong>Resource Information</strong></p>
+                <table class="table table-border table-striped">
+                    <tbody><tr>
+                        <td>API Version</td>
+                        <td><span class="label label-info">1</span></td>
+                    </tr><tr>
+                        <td>Response Format</td><td><strong>json</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Rate Limited?</td><td><strong>Yes</strong></td>
+                    </tr>
+                    
+                </tbody></table>
+            </div>
+        </div>
+    </div>
+</div>
+            </div>
+
+        </div> <!-- /container -->
+
+        <div id="footer">
+        <hr>
+        <div class="container-fluid">
+            <ul class="inline">
+                <li><a href="https://wheretheiss.at/w/about">About</a></li>
+                <li><a href="http://blog.wheretheiss.at/">Blog</a></li>
+                <li><a href="https://wheretheiss.at/w/developer">API</a></li>
+                <li>© 2013 Linzig, LLC</li>
+                
+            </ul>
+        </div>
+        </div>
+
+        <script type="text/javascript">
+                logged_in = false;
+                </script>
+                                        <script type="text/javascript">
+                  var uvOptions = {};
+                  (function() {
+                    var uv = document.createElement('script'); uv.type = 'text/javascript'; uv.async = true;
+                    uv.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'widget.uservoice.com/63GNMxab5vZ1JPwttfc6g.js';
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(uv, s);
+                  })();
+                </script>
+                    
+                <script type="text/javascript">
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-4871726-5']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+        </script>
+            
+
+</body></html>
